@@ -12,26 +12,24 @@
         <label>Apellido</label><input id="textApellido" type="text"/><br />
         <label>Telefono</label><input id="textTelefono" type="text"/><br />
         <label>Email</label><input id="textEmail" type="text"/><br />
+        <button id="btnAgregar">Agregar</button><br/><br/>
+
+      <div id="listado">
+
+
+      </div>  
 
         <script>
+            window.onload = iniciar;
+            
+           function iniciar() {
+                var btnAgregar = document.getElementById("btnAgregar");
+                btnAgregar.addEventListener("click", clickBtnAgregar);
+           }
 
-            var persona = {
-                "nombre": "Gabriel",
-                "apellido": "Hernandez",
-                "telefono": "11346534",
-                "email": "gaboxroll.2@gmail.com",
-                "direccion": "Avenida rivadavia 8500",
-                "empleo": {
-                    "nombre": "Programador",
-                    "localidad": "Argentina"
-                }
-            }
-
-            alert(persona.empleo.nombre)
-
-            persona.telefono = "no tiene"
-            console.log(persona);
-
+           function clickBtnAgregar() {
+               alert("CLICK")
+           }
 
         </script>
 
