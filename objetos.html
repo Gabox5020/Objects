@@ -21,6 +21,8 @@
 
         <script>
             window.onload = iniciar;
+
+            var personas = [];
             
            function iniciar() {
                 var btnAgregar = document.getElementById("btnAgregar");
@@ -32,7 +34,24 @@
                var apellido = document.getElementById("txtApellido").value;
                var telefono = document.getElementById("txtTelefono").value;
                var email = document.getElementById("txtEmail").value;
-               alert(email)
+               
+               var persona = {
+                   "nombre": nombre,
+                   "apellido": apellido,
+                   "telefono": telefono,
+                   "email": email 
+               }
+               personas.push(persona);
+               mostrarPersonas();
+           }
+           
+           function mostrarPersonas() {
+               var listado = document.getElementById("listado");
+               var html = "";
+               for (var persona of personas) {
+                    html += persona.nombre + ' ' + persona.apellido + ' ' + persona.telefono + persona.email + '<br/>';
+               }
+               listado.innerHTML = html;
            }
 
         </script>
